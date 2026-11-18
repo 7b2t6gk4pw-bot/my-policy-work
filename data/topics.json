@@ -1,0 +1,367 @@
+{
+ "topics": [
+  {
+   "id": "children",
+   "label": "Children & Families",
+   "blurb": "Child safety, custody proceedings, foster care and child protection."
+  },
+  {
+   "id": "health",
+   "label": "Health Care & Medicaid",
+   "blurb": "MO HealthNet eligibility, coverage, public health and tobacco."
+  },
+  {
+   "id": "maternal",
+   "label": "Maternal Health",
+   "blurb": "Pregnancy-associated mortality review, midwifery and prenatal coverage."
+  },
+  {
+   "id": "disability",
+   "label": "Disability Rights",
+   "blurb": "Employment, benefits and inclusion for Missourians with disabilities."
+  },
+  {
+   "id": "education",
+   "label": "Education",
+   "blurb": "Student discipline, special education, school climate and college savings."
+  },
+  {
+   "id": "justice",
+   "label": "Justice & Public Safety",
+   "blurb": "Death penalty abolition, crime victims and public safety."
+  },
+  {
+   "id": "accountability",
+   "label": "Government Accountability",
+   "blurb": "Oversight, transparency and reporting by state agencies."
+  },
+  {
+   "id": "civic",
+   "label": "Housing, Work & Civic Life",
+   "blurb": "Tenant protections, property records, wages, voting and community."
+  }
+ ],
+ "bills": {
+  "2017-R-HB396": [
+   "justice"
+  ],
+  "2017-R-HB581": [
+   "children"
+  ],
+  "2017-R-HB955": [
+   "civic"
+  ],
+  "2017-R-HB1029": [
+   "justice"
+  ],
+  "2017-R-HB1033": [
+   "civic"
+  ],
+  "2017-R-HB1051": [
+   "civic"
+  ],
+  "2017-R-HB1052": [
+   "disability"
+  ],
+  "2017-R-HB1121": [
+   "education"
+  ],
+  "2017-R-HB1122": [
+   "education"
+  ],
+  "2018-R-HB1694": [
+   "disability"
+  ],
+  "2018-R-HB1695": [
+   "justice"
+  ],
+  "2018-R-HB1696": [
+   "civic"
+  ],
+  "2018-R-HB1971": [
+   "children"
+  ],
+  "2018-R-HB1984": [
+   "disability"
+  ],
+  "2018-R-HB2130": [
+   "disability"
+  ],
+  "2018-R-HB2303": [
+   "maternal"
+  ],
+  "2018-R-HB2328": [
+   "disability"
+  ],
+  "2018-R-HB2405": [
+   "education"
+  ],
+  "2018-R-HB2431": [
+   "education"
+  ],
+  "2019-R-HB60": [
+   "children"
+  ],
+  "2019-R-HB61": [
+   "disability"
+  ],
+  "2019-R-HB62": [
+   "education"
+  ],
+  "2019-R-HB63": [
+   "civic"
+  ],
+  "2019-R-HB64": [
+   "justice"
+  ],
+  "2019-R-HB517": [
+   "disability"
+  ],
+  "2019-R-HB664": [
+   "maternal"
+  ],
+  "2019-R-HR19": [
+   "disability"
+  ],
+  "2020-R-HB1270": [
+   "disability"
+  ],
+  "2020-R-HB1271": [
+   "children"
+  ],
+  "2020-R-HB1272": [
+   "health"
+  ],
+  "2020-R-HB1273": [
+   "health"
+  ],
+  "2020-R-HB1274": [
+   "children"
+  ],
+  "2020-R-HB1275": [
+   "education"
+  ],
+  "2020-R-HB1276": [
+   "disability"
+  ],
+  "2020-R-HB1277": [
+   "justice"
+  ],
+  "2020-R-HB1278": [
+   "civic"
+  ],
+  "2020-R-HB1670": [
+   "health"
+  ],
+  "2020-R-HB1671": [
+   "education"
+  ],
+  "2020-R-HB1672": [
+   "maternal"
+  ],
+  "2020-R-HB1673": [
+   "health"
+  ],
+  "2020-R-HB2158": [
+   "health"
+  ],
+  "2020-R-HB2159": [
+   "health"
+  ],
+  "2020-R-HB2160": [
+   "accountability"
+  ],
+  "2020-R-HB2357": [
+   "maternal"
+  ],
+  "2020-R-HB2358": [
+   "accountability"
+  ],
+  "2020-R-HB2438": [
+   "maternal"
+  ],
+  "2020-R-HB2439": [
+   "health"
+  ],
+  "2020-R-HB2440": [
+   "education"
+  ],
+  "2020-R-HB2478": [
+   "education"
+  ],
+  "2020-R-HB2601": [
+   "civic"
+  ],
+  "2020-R-HB2609": [
+   "education"
+  ],
+  "2020-R-HR4542": [
+   "disability"
+  ],
+  "2021-R-HB42": [
+   "health"
+  ],
+  "2021-R-HB43": [
+   "children"
+  ],
+  "2021-R-HB44": [
+   "civic"
+  ],
+  "2021-R-HB45": [
+   "health"
+  ],
+  "2021-R-HB46": [
+   "maternal"
+  ],
+  "2021-R-HB47": [
+   "maternal"
+  ],
+  "2021-R-HB48": [
+   "accountability"
+  ],
+  "2021-R-HB49": [
+   "civic"
+  ],
+  "2021-R-HB50": [
+   "justice"
+  ],
+  "2021-R-HB51": [
+   "education"
+  ],
+  "2021-R-HB776": [
+   "education"
+  ],
+  "2021-R-HB875": [
+   "health"
+  ],
+  "2021-R-HB1082": [
+   "health"
+  ],
+  "2021-R-HB1286": [
+   "civic"
+  ],
+  "2022-R-HB2026": [
+   "children"
+  ],
+  "2022-R-HB2027": [
+   "civic"
+  ],
+  "2022-R-HB2028": [
+   "justice"
+  ],
+  "2022-R-HB2029": [
+   "civic"
+  ],
+  "2022-R-HB2030": [
+   "education"
+  ],
+  "2022-R-HB2146": [
+   "children"
+  ],
+  "2022-R-HB2659": [
+   "health"
+  ],
+  "2022-R-HB2804": [
+   "children"
+  ],
+  "2022-R-HB2805": [
+   "children"
+  ],
+  "2022-S1-HB15": [
+   "children"
+  ],
+  "2023-R-HB500": [
+   "children"
+  ],
+  "2023-R-HB605": [
+   "children"
+  ],
+  "2023-R-HB606": [
+   "education"
+  ],
+  "2023-R-HB607": [
+   "education"
+  ],
+  "2023-R-HB608": [
+   "education"
+  ],
+  "2023-R-HB609": [
+   "justice"
+  ],
+  "2023-R-HB610": [
+   "civic"
+  ],
+  "2023-R-HB611": [
+   "civic"
+  ],
+  "2023-R-HB612": [
+   "maternal"
+  ],
+  "2023-R-HB613": [
+   "maternal"
+  ],
+  "2023-R-HB614": [
+   "accountability"
+  ],
+  "2023-R-HB615": [
+   "civic"
+  ],
+  "2023-R-HB616": [
+   "accountability"
+  ],
+  "2023-R-HB1151": [
+   "children"
+  ],
+  "2023-R-HB1232": [
+   "accountability"
+  ],
+  "2023-R-HB1266": [
+   "children"
+  ],
+  "2023-R-HB1271": [
+   "children"
+  ],
+  "2023-R-HB1341": [
+   "justice"
+  ],
+  "2023-R-HB1342": [
+   "civic"
+  ],
+  "2023-R-HB1343": [
+   "children"
+  ],
+  "2024-R-HB1839": [
+   "civic"
+  ],
+  "2024-R-HB1840": [
+   "accountability"
+  ],
+  "2024-R-HB1841": [
+   "civic"
+  ],
+  "2024-R-HB1842": [
+   "children"
+  ],
+  "2024-R-HB1843": [
+   "education"
+  ],
+  "2024-R-HB1844": [
+   "civic"
+  ],
+  "2024-R-HB1845": [
+   "civic"
+  ],
+  "2024-R-HB1846": [
+   "justice"
+  ],
+  "2024-R-HB1994": [
+   "justice"
+  ],
+  "2024-R-HB2698": [
+   "accountability"
+  ],
+  "2024-R-HB2758": [
+   "health"
+  ]
+ }
+}

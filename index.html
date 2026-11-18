@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarah Unsicker — Policy Work</title>
+<meta name="description" content="Legislation filed by Sarah Unsicker in the Missouri House of Representatives, 2017–2024.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#legislation">Skip to legislation</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Policy work</p>
+    <h1>Sarah Unsicker</h1>
+    <p class="lede">Legislation filed in the Missouri House of Representatives across eight years in office, 2017–2024 — every bill and resolution, drawn from the official House record.</p>
+    <p class="service">State Representative · District 91 (2017–2022) · District 83 (2023–2024)</p>
+    <nav class="jump" aria-label="Sections">
+      <a href="#areas">Policy areas</a>
+      <a href="#priorities">Persistent priorities</a>
+      <a href="#sessions">By session</a>
+      <a href="#legislation">All legislation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="stats wrap" aria-label="At a glance">
+    <dl id="stats"></dl>
+  </section>
+
+  <section id="areas" class="wrap">
+    <h2>Policy areas</h2>
+    <p class="section-note">Select an area to see its bills.</p>
+    <div id="topic-grid" class="topic-grid"></div>
+  </section>
+
+  <section id="priorities" class="wrap">
+    <h2>Persistent priorities</h2>
+    <p class="section-note">Proposals refiled in three or more sessions. Each mark is a year the bill was filed.</p>
+    <div id="series" class="series"></div>
+  </section>
+
+  <section id="sessions" class="wrap">
+    <h2>By session</h2>
+    <p class="section-note">Bills and resolutions filed each year.</p>
+    <div id="years" class="years" role="list"></div>
+  </section>
+
+  <section id="legislation" class="wrap">
+    <h2>All legislation</h2>
+    <form id="filters" class="filters" onsubmit="return false">
+      <label class="search">
+        <span>Search</span>
+        <input id="q" type="search" placeholder="Bill number, subject or committee" autocomplete="off">
+      </label>
+      <label><span>Session</span><select id="f-year"><option value="">All years</option></select></label>
+      <label><span>Policy area</span><select id="f-topic"><option value="">All areas</option></select></label>
+      <label><span>Furthest stage</span><select id="f-stage"><option value="">Any stage</option></select></label>
+      <button type="button" id="reset" class="reset" hidden>Clear filters</button>
+    </form>
+    <p id="count" class="count" aria-live="polite"></p>
+    <ol id="bills" class="bills"></ol>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Source: <a href="https://archive.house.mo.gov/">Missouri House of Representatives</a> bill records<span id="retrieved"></span>. Bill titles, actions, co-sponsors and documents are reproduced from the official record; policy-area groupings are editorial.</p>
+</footer>
+
+<script src="data/bills.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
