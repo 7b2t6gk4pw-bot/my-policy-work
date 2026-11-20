@@ -202,6 +202,86 @@
     });
   }
 
+  // ---- Amendments
+  var A = D.amendments || [];
+  var STATUS = { 'Committee Amendment': 'Committee amendment' };
+  var ORDER = ['Adopted', 'Committee Amendment', 'Defeated', 'Withdrawn', 'Returned', 'Distributed'];
+  var aState = { year: '', status: '' };
+  function statusLabel(s) { return STATUS[s] || s; }
+  ORDER.forEach(function (s) {
+    var n = A.filter(function (a) { return a.status === s; }).length;
+    if (!n) return;
+    $('a-status').appendChild(el('option', { value: s, text: statusLabel(s) }));
+    $('amend-stats').appendChild(el('span', { class: 'chip' }, [el('b', { text: String(n) }), document.createTextNode(' ' + statusLabel(s).toLowerCase())]));
+  });
+  years.slice().reverse().forEach(function (y) { $('a-year').appendChild(el('option', { value: y, text: String(y) })); });
+  $('a-year').addEventListener('change', function (e) { aState.year = e.target.value; renderAmend(); });
+  $('a-status').addEventListener('change', function (e) { aState.status = e.target.value; renderAmend(); });
+  function renderAmend() {
+    var shown = A.filter(function (a) {
+      return (!aState.year || String(a.year) === aState.year) && (!aState.status || a.status === aState.status);
+    });
+    $('a-count').textContent = shown.length + (shown.length === 1 ? ' amendment' : ' amendments') +
+      (shown.length !== A.length ? ' of ' + A.length : '');
+    var list = $('amend-list');
+    list.textContent = '';
+    if (!shown.length) { list.appendChild(el('li', { class: 'empty', text: 'No amendments match these filters.' })); return; }
+    var byYear = {};
+    shown.forEach(function (a) { (byYear[a.year] = byYear[a.year] || []).push(a); });
+    Object.keys(byYear).sort().reverse().forEach(function (y) {
+      list.appendChild(el('li', { class: 'year-head' }, [el('span', { text: y }), el('small', { text: byYear[y].length + (byYear[y].length === 1 ? ' amendment' : ' amendments') })]));
+      byYear[y].sort(function (a, b) { return ORDER.indexOf(a.status) - ORDER.indexOf(b.status); });
+      byYear[y].forEach(function (a) {
+        list.appendChild(el('li', { class: 'amend-row' }, [
+          el('span', { class: 'num' }, [el('a', { href: a.billUrl, rel: 'noopener', text: a.bill })]),
+          el('span', { class: 'title' }, [
+            document.createTextNode(a.billTitle),
+            el('span', { class: 'meta', text: 'Bill sponsor: ' + a.billSponsor + (a.sessionCode !== 'R' ? ' · ' + a.session : '') })
+          ]),
+          el('span', { class: 'stage' }, [
+            el('span', { class: 'status s-' + a.status.toLowerCase().replace(/\W+/g, '-'), text: statusLabel(a.status) }),
+            el('a', { href: a.pdf, rel: 'noopener', text: (a.designation ? a.designation + ' · ' : '') + 'Text ' + a.lr })
+          ])
+        ]));
+      });
+    });
+  }
+  renderAmend();
+
+  // ---- In my own words
+  var W = window.POLICY_WRITING;
+  if (W) {
+    var maxT = W.topics[0].count;
+    W.topics.forEach(function (t) {
+      var bar = el('span', { class: 'w-bar' });
+      bar.style.width = Math.max(2, t.count / maxT * 100) + '%';
+      $('w-topics').appendChild(el('a', { class: 'w-topic', href: 'documents.html#topic-' + t.id }, [
+        el('span', { class: 'w-name' }, [document.createTextNode(t.label), el('span', { class: 'w-n', text: String(t.count) })]),
+        el('span', { class: 'w-track' }, [bar]),
+        t.quote ? el('span', { class: 'w-quote', text: '“' + t.quote + '”' }) : null
+      ]));
+    });
+    W.documents.forEach(function (d) {
+      var c = d.counts, parts = [];
+      if (c.post) parts.push(c.post.toLocaleString() + ' posts');
+      if (c.reply) parts.push(c.reply.toLocaleString() + ' replies');
+      if (c.repost) parts.push(c.repost.toLocaleString() + ' reposts');
+      if (c.note) parts.push(c.note + ' notes');
+      var tags = el('span', { class: 'w-tags' });
+      d.topics.forEach(function (id) {
+        var t = W.topics.filter(function (x) { return x.id === id; })[0];
+        if (t) tags.appendChild(el('span', { class: 'chip', text: t.label }));
+      });
+      $('w-docs').appendChild(el('article', { class: 'w-doc' }, [
+        el('h4', { text: d.title }),
+        el('p', { class: 'meta', text: d.from.slice(0, 4) + (d.to.slice(0, 4) !== d.from.slice(0, 4) ? '–' + d.to.slice(0, 4) : '') + ' · ' + parts.join(' · ') }),
+        el('p', { text: d.summary }),
+        tags,
+        el('a', { class: 'official', href: 'documents.html#doc-' + d.id, text: 'Read the full document →' })
+      ]));
+    });
+  }
+
   if (D.retrieved) $('retrieved').textContent = ', retrieved ' + fmtDate(D.retrieved);
   render();
 })();

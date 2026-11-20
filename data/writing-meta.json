@@ -1,0 +1,38 @@
+{
+ "documents": [
+  {"id": "sarahunsicker", "source": "twitter-SarahUnsicker.csv", "kind": "twitter", "title": "@SarahUnsicker on Twitter",
+   "summary": "My main account, from 2009 to the eve of the 2016 election. The early years are a solo family-law and special-education attorney and new mother thinking out loud: custody rulings, IEP and 504 questions, Parents as Teachers cuts. From late 2015 it becomes a running commentary on the Missouri legislature as I campaigned for House District 91 — gun bills such as SB 656, voter photo ID, SJR 39, abortion restrictions such as HB 1370, early childhood funding, child poverty and ethics reform."},
+  {"id": "fictionaslife", "source": "twitter-FictionAsLife.csv", "kind": "twitter", "title": "@FictionAsLife on Twitter",
+   "summary": "My writing account, 2014–2016, tied to my blog. Flash fiction, weekly coffee-share posts and essays on parenting and ADHD sit beside real-time reaction to Ferguson after Michael Brown was killed: questions about police conduct, the grand jury and prosecutor, school suspension disparities and what St. Louis needed to hear. I also wrote here as a volunteer CHADD coordinator offering ADHD training for teachers."},
+  {"id": "addsarah", "source": "twitter-ADDSarah.csv", "kind": "twitter", "title": "@ADDSarah on Twitter",
+   "summary": "A personal account from 2009 to 2014, mostly 2010: daily life as a lawyer and mother with ADHD. Routines and organizing, breastfeeding and attachment-parenting chats, a premature birth, and notes from a practice in divorce, family drug court and education advocacy. Less policy argument than lived experience of the issues I later legislated on — maternal health, ADHD, special education and family court."},
+  {"id": "notes2023", "source": "evernote-2023.enex", "kind": "notes", "title": "2023 session working notes",
+   "summary": "My Evernote notebook for the 2023 session: the ranked bill list (UCCJEA child-custody jurisdiction, residential school licensing, the Council on Sex Trafficking and public corruption at the top), drafting status for each refiled bill, planning notes for the Statewide Council on Sex Trafficking and Sexual Exploitation of Children, and open questions about the Agape Boarding School investigation."}
+ ],
+ "topics": [
+  {"id": "guns", "label": "Gun violence prevention", "area": "justice", "quote": "If #moleg is so worried about bad guys with guns, they should make it easier, not harder, for police to do their job. Vote NO on #SB656"},
+  {"id": "policing", "label": "Policing & racial justice", "area": "justice", "quote": "#Ferguson is so much bigger than Mike Brown. What are some of the other issues raised?"},
+  {"id": "specialed", "label": "Disability, ADHD & special education", "area": "disability", "quote": "Teachers to learn more about ADHD and learning disabilities to correct behavior-->fewer suspensions."},
+  {"id": "earlyed", "label": "Early childhood & child care", "area": "education", "quote": "I think #ParentsAsTeachers is a vital program and will work to restore funding."},
+  {"id": "schools", "label": "Schools & student discipline", "area": "education", "quote": "The School-to-Prison Pipeline begins in preschool. #STPP"},
+  {"id": "maternal", "label": "Breastfeeding & maternal health", "area": "maternal", "quote": "Pregnant mamas should plan for preterm labor ... 2 AM 7 wks early was not the time to pick a hospital! #amillionmoms"},
+  {"id": "family", "label": "Family law & child welfare", "area": "children", "quote": "If you have anything to say about how child support is calculated in Missouri (Form 14), speak up!"},
+  {"id": "trafficking", "label": "Child trafficking & residential facility oversight", "area": "children", "quote": ""},
+  {"id": "repro", "label": "Reproductive rights", "area": "health", "quote": "Should an absent parent be allowed to prohibit a necessary medical procedure for his/her child? #moleg #HB1370 #hd91"},
+  {"id": "health", "label": "Health care & Medicaid", "area": "health", "quote": "A true \"culture of life\" would support mentally ill who cannot work high-paying job and cannot afford health insurance. #MoLeg"},
+  {"id": "voting", "label": "Voting rights", "area": "civic", "quote": "A friend told me of the struggles her 87 year old mother had getting a photo ID, since she doesn't have a birth certificate. #MOLeg #VoterID"},
+  {"id": "lgbtq", "label": "LGBTQ equality", "area": "", "quote": "And when all bakeries in a county refuse service to GLBT couples, where should a couple go? #SJR39 #NotInMyState"},
+  {"id": "econ", "label": "Poverty, wages & consumer debt", "area": "civic", "quote": "Nearly one in four Missouri children is food insecure. We must address #childpoverty."},
+  {"id": "ethics", "label": "Ethics & open government", "area": "accountability", "quote": "The cooling off period for lobbying should apply to ALL, for 3 years, and we need campaign finance limits. #moleg"},
+  {"id": "immigration", "label": "Refugees & immigration", "area": "civic", "quote": "In other words, denying refugees is as useless as it is heartless."},
+  {"id": "environment", "label": "Environment & West Lake Landfill", "area": "", "quote": "Flash flooding at #WestLakeLandfill. Frightening."},
+  {"id": "deathpenalty", "label": "Death penalty", "area": "justice", "quote": ""}
+ ],
+ "noteTopics": {
+  "2023 Bill List": ["family", "trafficking", "ethics", "econ", "health", "maternal", "voting", "schools", "specialed", "deathpenalty", "immigration"],
+  "GAL Bills 2/3": ["family"],
+  "Missouri Statewide Council on Sex Trafficking and Sexual Exploitation of Children | Office for Victims of Crime (OVC)": ["trafficking", "econ"],
+  "2023 TOC and Issues": ["family", "trafficking", "specialed"],
+  "Agape Proof": ["trafficking"]
+ }
+}

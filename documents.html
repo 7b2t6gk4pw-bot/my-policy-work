@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarah Unsicker — Writing & Notes</title>
+<meta name="description" content="Sarah Unsicker's Twitter archives and 2023 session notes, searchable by policy topic.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="reader-head">
+  <div class="wrap">
+    <a href="index.html#writing">← Sarah Unsicker · Policy work</a>
+    <h1 id="r-title">Writing &amp; notes</h1>
+    <p id="r-summary">My Twitter archives and 2023 session notes, in full.</p>
+  </div>
+</header>
+<main class="wrap">
+  <form class="filters filters-docs" onsubmit="return false">
+    <label class="search"><span>Search</span><input id="d-q" type="search" placeholder="Words, hashtags or bill numbers" autocomplete="off"></label>
+    <label><span>Document</span><select id="d-doc"><option value="">All documents</option></select></label>
+    <label><span>Topic</span><select id="d-topic"><option value="">All topics</option></select></label>
+    <label><span>Type</span><select id="d-kind">
+      <option value="own">My posts, replies and notes</option>
+      <option value="">Everything, with reposts</option>
+      <option value="post">Posts</option><option value="reply">Replies</option>
+      <option value="repost">Reposts of others</option><option value="note">Notes</option>
+    </select></label>
+    <label><span>Year</span><select id="d-year"><option value="">All</option></select></label>
+    <button type="button" id="d-reset" class="reset" hidden>Clear filters</button>
+  </form>
+  <p id="d-count" class="count" aria-live="polite"></p>
+  <ol id="items" class="items"></ol>
+  <button type="button" id="more" class="more" hidden>Show more</button>
+</main>
+<footer class="wrap foot">
+  <p>Posts are reproduced as written from my Twitter archive exports; reposts are other people's words. Topics are assigned by keyword and may miss or mislabel individual posts. Original export files are in the <code>sources/</code> folder of this site's repository.</p>
+</footer>
+<script src="data/documents.js"></script>
+<script src="assets/documents.js"></script>
+</body>
+</html>

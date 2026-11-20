@@ -14,13 +14,15 @@
   <div class="wrap">
     <p class="eyebrow">Policy work</p>
     <h1>Sarah Unsicker</h1>
-    <p class="lede">Legislation filed in the Missouri House of Representatives across eight years in office, 2017–2024 — every bill and resolution, drawn from the official House record.</p>
+    <p class="lede">Legislation filed in the Missouri House of Representatives across eight years in office, 2017–2024 — every bill, resolution and amendment from the official House record, alongside what I wrote about the issues.</p>
     <p class="service">State Representative · District 91 (2017–2022) · District 83 (2023–2024)</p>
     <nav class="jump" aria-label="Sections">
       <a href="#areas">Policy areas</a>
       <a href="#priorities">Persistent priorities</a>
       <a href="#sessions">By session</a>
       <a href="#legislation">All legislation</a>
+      <a href="#amendments">Amendments</a>
+      <a href="#writing">In my own words</a>
     </nav>
   </div>
 </header>
@@ -63,13 +65,33 @@
     <p id="count" class="count" aria-live="polite"></p>
     <ol id="bills" class="bills"></ol>
   </section>
+  <section id="amendments" class="wrap">
+    <h2>Amendments</h2>
+    <p class="section-note">Amendments filed under my name to other members' bills. Each status is the House's own; “Distributed” is its label for an amendment on file with no floor outcome recorded.</p>
+    <div id="amend-stats" class="chips"></div>
+    <form class="filters filters-small" onsubmit="return false">
+      <label><span>Session</span><select id="a-year"><option value="">All years</option></select></label>
+      <label><span>Outcome</span><select id="a-status"><option value="">Any outcome</option></select></label>
+    </form>
+    <p id="a-count" class="count" aria-live="polite"></p>
+    <ol id="amend-list" class="bills amend"></ol>
+  </section>
+
+  <section id="writing" class="wrap">
+    <h2>In my own words</h2>
+    <p class="section-note">Policy topics drawn from my Twitter archives and session notes, counted from my own posts and replies. Select a topic to read everything I wrote on it.</p>
+    <div id="w-topics" class="w-topics"></div>
+    <h3 class="sub">The documents</h3>
+    <div id="w-docs" class="w-docs"></div>
+  </section>
 </main>
 
 <footer class="wrap foot">
-  <p>Source: <a href="https://archive.house.mo.gov/">Missouri House of Representatives</a> bill records<span id="retrieved"></span>. Bill titles, actions, co-sponsors and documents are reproduced from the official record; policy-area groupings are editorial.</p>
+  <p>Source: <a href="https://archive.house.mo.gov/">Missouri House of Representatives</a> bill records<span id="retrieved"></span>. Bill titles, actions, co-sponsors and documents are reproduced from the official record; policy-area groupings are editorial. Topics in the writing section are assigned by keyword and may miss or mislabel individual posts.</p>
 </footer>
 
 <script src="data/bills.js"></script>
+<script src="data/writing.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

@@ -44,8 +44,15 @@ def get(kind, key, path):
     f = os.path.join(CACHE, kind, key + ".html")
     if not os.path.exists(f):
         os.makedirs(os.path.dirname(f), exist_ok=True)
-        with urllib.request.urlopen(BASE + path, timeout=60) as r:
-            data = r.read()
+        for attempt in range(4):
+            try:
+                with urllib.request.urlopen(BASE + path, timeout=60) as r:
+                    data = r.read()
+                break
+            except OSError:
+                if attempt == 3:
+                    raise
+                time.sleep(2 * (attempt + 1))
         with open(f, "wb") as out:
             out.write(data)
         time.sleep(0.4)
@@ -101,6 +108,41 @@ def stage_of(actions, is_resolution):
             s = max(s, 7)
         reached = max(reached, s)
     return STAGES[reached][0]
+
+
+def build_amendments():
+    """Amendments offered to other members' bills, from the member page's Amendments list."""
+    out = []
+    for year, code, label in SESSIONS:
+        d = district(year)
+        page = get("amend", f"{year}-{code}",
+                   f"MemberDetails.aspx?year={year}&code={code}&district={d}&category=amendment")
+        sec = page[page.find('id="ExpandedAmendments"'):]
+        sec = sec[:sec.find("</nav>")]
+        for cell in sec.split('<div class="DocInfoCell"')[1:]:
+            num = re.search(r"bill=(\w+)&", cell).group(1)
+            status = re.search(r'title="([^"]+)"', cell).group(1)
+            m = re.search(r'href="(https://documents[^"]+)"[^>]*>([^<]+)</a>\)(.*?)<br', cell, re.S)
+            c = get("content", f"{year}-{code}-{num}", f"BillContent.aspx?bill={num}&year={year}&code={code}&style=new")
+            title = text(re.search(r'class="BillDescription">(.*?)</div>', c, re.S).group(1))
+            sponsor = re.search(r'<th scope="row">Sponsor:</th>\s*<td>(.*?)</td>', c, re.S)
+            kind = re.match(r"[A-Z]+", num).group(0)
+            desig = text(m.group(3)).lstrip("*").strip()
+            desig = re.sub(r"^(HC?A)\s*(\d+)$", r"\1 \2", desig)
+            out.append({
+                "year": year,
+                "session": label,
+                "sessionCode": code,
+                "bill": f"{kind} {int(re.search(r'[0-9]+', num).group(0))}",
+                "billTitle": title[0].upper() + title[1:].rstrip("."),
+                "billSponsor": re.sub(r"\s*\(\d+\)$", "", text(sponsor.group(1))) if sponsor else "",
+                "status": status,
+                "designation": desig,
+                "lr": m.group(2),
+                "pdf": m.group(1),
+                "billUrl": f"{BASE}Bill.aspx?bill={num}&year={year}&code={code}",
+            })
+    return out
 
 
 def main():
@@ -175,6 +217,8 @@ def main():
                 "url": f"{BASE}Bill.aspx?bill={num}&year={year}&code={code}",
             })
 
+    amendments = build_amendments()
+
     topics = json.load(open(os.path.join(ROOT, "data", "topics.json")))
     missing = [b["id"] for b in bills if b["id"] not in topics["bills"]]
     if missing:
@@ -215,6 +259,7 @@ def main():
         "topics": topics["topics"],
         "series": series_out,
         "bills": bills,
+        "amendments": amendments,
     }
     with open(os.path.join(ROOT, "data", "bills.json"), "w") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
